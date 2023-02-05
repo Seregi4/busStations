@@ -10,15 +10,16 @@ public class DirectServiceImpl implements DirectService {
 
     @Override
     public String findDirect(Integer firstStation, Integer secondStation) {
+        long time = System.currentTimeMillis();
         String firstBusStation = " " + Integer.toString(firstStation) + " ";
         String secondBusStation = " " + Integer.toString(secondStation) + " ";
         String directIsExist = "false";
-        long time;
+
 
         File file = new File("src/main/resources/static/1.txt");
 
         try {
-            time = System.currentTimeMillis();
+
 
             directIsExist = getDirectIsExist(firstBusStation, secondBusStation, directIsExist, file);
 
